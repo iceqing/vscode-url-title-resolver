@@ -243,7 +243,7 @@ const htmlEntityMapping = new Map<string, string>([
 const htmlEntityRegExp = new RegExp(`&(#\\d+|#x[\\da-fA-F]+|${Array.from(htmlEntityMapping.keys()).join('|')});`, 'gi');
 
 export function getTitle(html: string): string|null {
-	const matches = html.match(/(?<=\<title\>).*?(?=\<\/title\>)/si);
+	const matches = html.match(/(?<=\<title[^>]*\>).*?(?=\<\/title\>)/si);
 	if (!matches) {
 		return null;
 	}
