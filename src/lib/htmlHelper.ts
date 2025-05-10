@@ -243,13 +243,19 @@ const htmlEntityMapping = new Map<string, string>([
 const htmlEntityRegExp = new RegExp(`&(#\\d+|#x[\\da-fA-F]+|${Array.from(htmlEntityMapping.keys()).join('|')});`, 'gi');
 
 export function getTitle(html: string): string|null {
-	const matches = html.match(/(?<=\<title\>).*?(?=\<\/title\>)/si);
-	if (!matches) {
-		return null;
+	const titleMatch = html.match(/(?<=\<title\>).*?(?=\<\/title\>)/si);
+	if (titleMatch && titleMatch[0]!=='') {
+		return sanitizeTitle(titleMatch[0]);
 	}
-	const result = sanitizeTitle(matches[0]);
 
-	return result;
+	const metaOgTitleMatch = html.match(/<meta\s+property=["']og:title["']\s+content=["'](.*?)["']\s*\/?>/i);
+	if (metaOgTitleMatch) {
+		let title = sanitizeTitle(metaOgTitleMatch[1]);
+		console.log("title:", title);
+		return title;
+	}
+
+	return null;
 }
 
 function sanitizeTitle(title: string): string {

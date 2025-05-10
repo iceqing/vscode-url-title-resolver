@@ -1,12 +1,12 @@
 {
-	"name": "vscode-url-title-resolver",
+	"name": "vscode-url-resolver",
 	"displayName": "URL title resolver for Markdown",
 	"description": "Resolves selected URLs of one or more HTML pages and uses the document title(s) to format Markdown links",
 	"version": "1.1.1",
 	"publisher": "capybara1",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/capybara1/vscode-url-title-resolver.git"
+		"url": "https://github.com/capybara1/markdown-url-resolver.git"
 	},
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"icon": "images/logo.png",
@@ -19,25 +19,37 @@
 	"keywords": [
 		"markdown"
 	],
-	"homepage": "https://github.com/capybara1/vscode-url-title-resolver/blob/main/README.md",
+	"homepage": "https://github.com/capybara1/markdown-url-resolver/blob/main/README.md",
 	"activationEvents": [
-		"onCommand:vscode-url-title-resolver.resolve-url-title"
+		"onCommand:markdown-url-resolver.resolve-url-title"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscode-url-title-resolver.resolve-url-title",
+				"command": "markdown-url-resolver.resolve-url-title",
 				"title": "Resolve title for URL(s)"
 			}
 		],
 		"menus": {
 			"commandPalette": [
 				{
-					"command": "vscode-url-title-resolver.resolve-url-title",
+					"command": "markdown-url-resolver.resolve-url-title",
 					"when": "editorLangId == markdown"
 				}
 			]
+		},
+		"properties": {
+			"type": "object",
+			"vscode-url-resolver.urlCookies": {
+				"description": "set cooikies for urls",
+				"additionalProperties": {
+					"type": "string"
+				},
+				"default": {
+					"https://example.com/": ""
+				}
+			}
 		}
 	},
 	"scripts": {

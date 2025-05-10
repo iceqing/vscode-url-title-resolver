@@ -16,14 +16,14 @@ Resolves selected URLs of one or more HTML pages and uses the document title(s) 
 
 ## Web
 
-1.  Visit the [extensions page](https://marketplace.visualstudio.com/items?itemName=Capybara1.vscode-url-title-resolver)
+1.  Visit the [extensions page](https://marketplace.visualstudio.com/items?itemName=Capybara1.markdown-url-resolver)
     on the Visual Studio Marketplace
 2.  Select Install
 
 ## VSCode
 
 1.  Press `F1` and type `Extensions: Install Extensions`
-2.  Search for `vscode-url-title-resolver`
+2.  Search for `markdown-url-resolver`
 3.  Select `install`
 
 # Quick Start
@@ -53,4 +53,4 @@ See [CHANGELOG](./CHANGELOG.md)
 
 # Latest Version
 
-Please visit the [release page](https://github.com/capybara1/vscode-url-title-resolver/releases) for details
+Please visit the [release page](https://github.com/capybara1/markdown-url-resolver/releases) for details

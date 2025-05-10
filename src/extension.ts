@@ -5,10 +5,10 @@ import { TitleInfos, requestTitles } from './lib/requestHelper';
 
 export function activate(context: vscode.ExtensionContext) {
 
-	console.log('Extension "vscode-url-title-resolver" is now active!');
+	console.log('Extension "markdown-url-resolver" is now active!');
 
 	let disposable = vscode.commands.registerCommand(
-		'vscode-url-title-resolver.resolve-url-title',
+		'markdown-url-resolver.resolve-url-title',
 		() => {
 			const textEditor = vscode.window.activeTextEditor;
 			if (!textEditor) {
@@ -58,6 +58,10 @@ function getReplacementForRange(text: string, titleInfos: TitleInfos) {
 }
 
 function provideFeedback(urls: string[], titleInfos: TitleInfos) {
+	console.log("titleInfos", titleInfos);
+	console.log("titleInfos.mapping", titleInfos.mapping);
+	console.log("titleInfos[0]", titleInfos[0]);
+	console.log("titleInfos:", JSON.stringify(titleInfos));
 	const message = `resolved ${titleInfos.mapping.size} titles of ${urls.length} URLs`;
 	if (titleInfos.mapping.size === urls.length) {
 		vscode.window.showInformationMessage(message);
