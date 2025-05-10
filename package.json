@@ -1,12 +1,12 @@
 {
-	"name": "vscode-url-resolver",
-	"displayName": "URL title resolver for Markdown",
+	"name": "markdown-url-resolver",
+	"displayName": "URL title auto resolver for Markdown",
 	"description": "Resolves selected URLs of one or more HTML pages and uses the document title(s) to format Markdown links",
 	"version": "1.1.1",
-	"publisher": "capybara1",
+	"publisher": "iceqing",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/capybara1/markdown-url-resolver.git"
+		"url": "https://github.com/iceqing/vscode-url-title-resolver"
 	},
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"icon": "images/logo.png",
@@ -41,7 +41,7 @@
 		},
 		"properties": {
 			"type": "object",
-			"vscode-url-resolver.urlCookies": {
+			"markdown-url-resolver.urlCookies": {
 				"description": "set cooikies for urls",
 				"additionalProperties": {
 					"type": "string"

@@ -59,7 +59,7 @@ export async function requestTitles(urls: string[]): Promise<TitleInfos> {
 
 
 function getCookieForUrl(url: string): string | undefined {
-	const config = vscode.workspace.getConfiguration('vscode-url-resolver');
+	const config = vscode.workspace.getConfiguration('markdown-url-resolver');
 	const urlCookies = config.get<Record<string, string>>('urlCookies') || {};
   
 	const matchedPrefix = Object.keys(urlCookies)
