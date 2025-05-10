@@ -23,7 +23,7 @@ export async function requestTitles(urls: string[]): Promise<TitleInfos> {
 			};
 
 			const cookie = getCookieForUrl(url);
-			if (cookie!==null) {
+			if (cookie!=null) {
 				requestConfig = {
 					headers: {
 						'Accept': 'text/html,application/xhtml+xml',

@@ -54,3 +54,10 @@ See [CHANGELOG](./CHANGELOG.md)
 # Latest Version
 
 Please visit the [release page](https://github.com/capybara1/markdown-url-resolver/releases) for details
+
+# Publish Plugin
+```
+vsce publish patch
+vsce package
+vsce package
+```
